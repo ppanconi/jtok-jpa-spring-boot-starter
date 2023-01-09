@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+                 version="2.2">
+
+<entity class="com.jtok.spring.domainevent.DomainEvent">
+        <table name="Domain_Events"/>
+        <attributes>
+            <id name="id"/>
+            <basic name="key">
+                <column nullable="false"/>
+            </basic>
+            <basic name="domainEvent">
+                <column nullable="false"/>
+            </basic>
+            <basic name="refEvent">
+                <column nullable="false"/>
+            </basic>
+            <basic name="domainPartition">
+                <column nullable="false"/>
+            </basic>
+            <basic name="topic">
+                <column nullable="false"/>
+            </basic>
+            <basic name="topicPartition">
+                <column nullable="false"/>
+            </basic>
+            <basic name="eventData">
+                <column nullable="true" length="1024"/>
+            </basic>
+            <basic name="eventTsMils">
+                <column nullable="false"/>
+            </basic>
+            <basic name="offSet">
+                <column nullable="true"/>
+            </basic>
+        </attributes>
+    </entity>
+
+</entity-mappings>
