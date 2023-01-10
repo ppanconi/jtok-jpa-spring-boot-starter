@@ -5,7 +5,7 @@
                  version="2.2">
 
 <entity class="com.jtok.spring.domainevent.DomainEvent">
-        <table name="Domain_Events"/>
+        <table name="XXwwqDomain_Events"/>
         <attributes>
             <id name="id"/>
             <basic name="key">
