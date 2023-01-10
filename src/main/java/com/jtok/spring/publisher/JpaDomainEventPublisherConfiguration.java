@@ -2,6 +2,7 @@ package com.jtok.spring.publisher;
 
 import com.jtok.spring.domainevent.DomainEventProcessor;
 import com.jtok.spring.domainevent.DomainEventRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -17,6 +18,7 @@ import javax.sql.DataSource;
 @Configuration
 //@EntityScan({"com.jtok.spring.domainevent"})
 @EnableJpaRepositories("com.jtok.spring.domainevent")
+@Slf4j
 public class JpaDomainEventPublisherConfiguration {
 
     @Bean
@@ -33,6 +35,11 @@ public class JpaDomainEventPublisherConfiguration {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, EntityManagerFactoryBuilder builder) {
+        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
+        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
+        log.info(" building entityManagerFactory ...");
+        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
+        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
         return builder
                 .dataSource(dataSource)
                 .mappingResources("META-INF/orm.xml")
