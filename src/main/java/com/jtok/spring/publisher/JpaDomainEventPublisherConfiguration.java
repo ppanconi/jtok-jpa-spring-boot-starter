@@ -12,6 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
+import javax.sql.DataSource;
+
 @Configuration
 //@EntityScan({"com.jtok.spring.domainevent"})
 @EnableJpaRepositories("com.jtok.spring.domainevent")
@@ -27,5 +29,13 @@ public class JpaDomainEventPublisherConfiguration {
     @Autowired
     public DomainEventProcessor domainEventProcessor(DomainEventRepository repository) {
         return new DomainEventProcessor(repository);
+    }
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, EntityManagerFactoryBuilder builder) {
+        return builder
+                .dataSource(dataSource)
+                .mappingResources("META-INF/orm.xml")
+                .build();
     }
 }
