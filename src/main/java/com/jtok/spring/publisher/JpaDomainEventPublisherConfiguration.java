@@ -13,7 +13,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
 @Configuration
-@EntityScan({"com.jtok.spring.domainevent"})
+//@EntityScan({"com.jtok.spring.domainevent"})
 @EnableJpaRepositories("com.jtok.spring.domainevent")
 public class JpaDomainEventPublisherConfiguration {
 
