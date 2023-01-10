@@ -4,7 +4,7 @@
                  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
                  version="2.2">
 
-<entity class="com.jtok.spring.domainevent.DomainEvent">
+<entity class="com.jtok.spring.domainevent.DomainEventdasddadasdasdd">
         <table name="XXwwqDomain_Events"/>
         <attributes>
             <id name="id"/>
