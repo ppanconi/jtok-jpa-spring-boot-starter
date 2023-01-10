@@ -35,6 +35,8 @@
             <basic name="offSet">
                 <column nullable="true"/>
             </basic>
+            <transient name="applicationPayload"/>
+            <transient name="domainEventType"/>
         </attributes>
     </entity>
 

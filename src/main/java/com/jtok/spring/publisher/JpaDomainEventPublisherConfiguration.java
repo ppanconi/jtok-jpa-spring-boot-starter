@@ -30,19 +30,21 @@ public class JpaDomainEventPublisherConfiguration {
     @Bean
     @Autowired
     public DomainEventProcessor domainEventProcessor(DomainEventRepository repository) {
+        log.info("*******************");
         return new DomainEventProcessor(repository);
     }
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, EntityManagerFactoryBuilder builder) {
-        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
-        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
-        log.info(" building entityManagerFactory ...");
-        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
-        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
-        return builder
-                .dataSource(dataSource)
-                .mappingResources("META-INF/orm.xml")
-                .build();
-    }
+//    @Bean
+//    @Autowired
+//    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, EntityManagerFactoryBuilder builder) {
+//        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
+//        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
+//        log.info(" 8--D -- .. building entityManagerFactory ...");
+//        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
+//        log.info(" %%%%%%%%%%%%%%%%%%%%%%% ");
+//        return builder
+//                .dataSource(dataSource)
+//                .mappingResources("META-INF/orm.xml")
+//                .build();
+//    }
 }
