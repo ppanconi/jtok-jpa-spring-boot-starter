@@ -15,7 +15,7 @@
                 <column nullable="false"/>
             </basic>
             <basic name="refEvent">
-                <column nullable="false"/>
+                <column nullable="true"/>
             </basic>
             <basic name="domainPartition">
                 <column nullable="false"/>
